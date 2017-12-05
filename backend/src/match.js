@@ -4,7 +4,7 @@ const axios = require('axios')
 class Match {
   constructor(matchId) {
     this.matchId = matchId
-    this.metadata = {}
+    this.matchData = {}
   }
 
   async load(cb) {

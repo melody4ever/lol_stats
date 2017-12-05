@@ -22,7 +22,35 @@
   font-size: large;
 }
 
+body {
+  font: 100% sans-serif;
+  margin: 15px;
+}
+
+input {
+  font-size: 18px;
+  outline: 0;
+}
+
+button.react-search-bar__submit{
+  background: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  font-size: 0;
+  outline: 0;
+  height: 25px;
+  background-color: #e5e5e5;
+  background-image: url(./icons/search.svg);
+  background-size: 35%;
+  border: 1px solid #ddd;
+  padding: 5px;
+  opacity: .8;
+  width: 40px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
