@@ -110,7 +110,7 @@ class App extends Component {
                   <th>Team 2</th>
                   {match.details.participantIdentities.filter(
                     pi=>match.details.participants.filter(
-                      p=>p.participantId == pi.participantId)[0].teamId === 200)
+                      p=>p.participantId === pi.participantId)[0].teamId === 200)
                   .map(pi=>
                     <td key={pi.participantId}>{pi.player.summonerName}</td>
                   )}
