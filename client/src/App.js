@@ -66,7 +66,7 @@ class App extends Component {
           <div key={match.gameId}>
             <button onClick={() => this.handleMatchDetail(match.gameId)}>Game ID:{match.gameId}, Champion ID:{match.champion}, Date: <Timestamp time={match.timestamp/1000} format='full' includeDay /></button>
             {match.details &&
-              <div>Match Details
+              <div align="center">Match Details
               <table>
                 <tbody>
                 <tr>
