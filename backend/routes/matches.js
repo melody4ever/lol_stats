@@ -1,8 +1,29 @@
 var express = require('express');
 var router = express.Router();
+var Match = require('../src/match');
 var Matchlist = require('../src/matchlist');
 
-router.get('/:summonerId/:beginIndex', function(req, res, next){
+router.get('/game/:gameId', function(req, res, next){
+    const gameId = parseInt(req.params.gameId)
+    try {
+        const match = new Match(gameId)
+        match.load(function(data){
+            console.log('matchData:', data);
+            res.send(JSON.stringify({
+                match: data,
+                status: { success: true },
+            }))
+        });
+
+    } catch (err) {
+        console.log(err)
+        res.send(JSON.stringify({
+            status: { success: false },
+        }))
+    }
+});
+
+router.get('/summoner/:summonerId/:beginIndex', function(req, res, next){
     const summonerId = parseInt(req.params.summonerId)
     const beginIndex = parseInt(req.params.beginIndex)
 
