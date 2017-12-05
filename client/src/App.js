@@ -9,6 +9,7 @@ class App extends Component {
   state = {matches:[], metadata:{}, suggestions:[]}
   
   handleSearch(input) {
+    this.setState({"matches":[],metadata:{}})
     fetch('/matches/account/'+input+'/0')
       .then(res => res.json())
       .then(data => this.setState({matches:data.matches, metadata:data.metadata}))

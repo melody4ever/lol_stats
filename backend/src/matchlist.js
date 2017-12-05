@@ -11,6 +11,7 @@ class Matchlist {
 
   async load(cb) {
     var isnum = /^\d+$/.test(this.accountId);
+    console.log(this.accountId, isnum);
     if (!isnum){
         //get accountId by name if necessary
         const url = `https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/${this.accountId}`
@@ -30,7 +31,7 @@ class Matchlist {
     console.log(`${url}?${query}`);
 
     let { data: { matches = [], startIndex, endIndex, totalGames } } = await axios.get(`${url}?${query}`)
-    this.metadata = {startIndex, endIndex, totalGames, accountId:this.accountId}
+    this.metadata = {startIndex, endIndex, totalGames, accountId:parseInt(this.accountId)}
     this.matchlist = matches
 
     //console.log('A',matches)
